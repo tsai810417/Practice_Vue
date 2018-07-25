@@ -18,3 +18,6 @@ var app = new Vue({
 
 // seen = false, the span will not be displayed
 // app.seen = false;
+
+// you can update the todos array
+// app.todos.push({ text: 'New item' })
