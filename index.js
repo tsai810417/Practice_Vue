@@ -3,6 +3,11 @@ var app = new Vue({
   data: {
     message: 'Hello Vue!',
     seen: true,
+    todos: [
+      { text: 'Todo #1' },
+      { text: 'Todo #2' },
+      { text: 'Todo #3' }
+    ],
   },
 });
 

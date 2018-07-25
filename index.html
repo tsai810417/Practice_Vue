@@ -10,6 +10,11 @@
       {{ message }}
       <br>
       <span v-if='seen'>Test the v-if attribute. See me if 'seen' is set to true</span>
+      <ol>
+        <li v-for='todo in todos'>
+          {{ todo.text }}
+        </li>
+      </ol>
     </div>
     <script src="index.js"></script>
   </body>
