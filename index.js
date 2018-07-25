@@ -8,7 +8,14 @@ var app = new Vue({
       { text: 'Todo #2' },
       { text: 'Todo #3' }
     ],
+    userInput: 'Set to blank'
   },
+  // the methods that can be invoked by event listeners
+  methods: {
+    reverseMessage: function(){
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
 });
 
 
