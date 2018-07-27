@@ -20,6 +20,16 @@
         <p>{{ userInput }}</p>
         <input type="text" v-model="userInput">
       </div>
+      <div>
+        <p>This is a Vue component</p>
+        <ul>
+          <todo-item
+            v-for='item in groceryList'
+            v-bind:todo=item
+            v-bind:key=item.id>
+          </todo-item>
+        </ul>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

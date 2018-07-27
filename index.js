@@ -1,3 +1,8 @@
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
 var app = new Vue({
   el: "#app", // specify where the Vue object will live
   data: {
@@ -8,7 +13,12 @@ var app = new Vue({
       { text: 'Todo #2' },
       { text: 'Todo #3' }
     ],
-    userInput: 'Set to blank'
+    userInput: 'Set to blank',
+    groceryList: [
+      { id: 1, text: 'banana' },
+      { id: 2, text: 'apple' },
+      { id: 3, text: 'orange' }
+    ]
   },
   // the methods that can be invoked by event listeners
   methods: {
