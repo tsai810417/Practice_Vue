@@ -17,8 +17,12 @@
       </ol>
       <button v-on:click='reverseMessage'>Click me to reverse message</button>
       <div>
-        <p>{{ userInput }}</p>
         <input type="text" v-model="userInput">
+        <ul>
+          <li v-for='name in matchedName' v-on:click='autofill'>
+            {{ name }}
+          </li>
+        </ul>
       </div>
       <div>
         <p>This is a Vue component</p>

@@ -2,7 +2,7 @@ Vue.component('todo-item', {
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 })
-
+const Names = ['Amy', 'Bryan', 'Coco', 'Dan', 'Emma', "Emily"]
 var app = new Vue({
   el: "#app", // specify where the Vue object will live
   data: {
@@ -13,22 +13,34 @@ var app = new Vue({
       { text: 'Todo #2' },
       { text: 'Todo #3' }
     ],
-    userInput: 'Set to blank',
+    userInput: '',
     groceryList: [
       { id: 1, text: 'banana' },
       { id: 2, text: 'apple' },
       { id: 3, text: 'orange' }
-    ]
+    ],
+    matchedName: []
   },
   // the methods that can be invoked by event listeners
   methods: {
     reverseMessage: function(){
       this.message = this.message.split('').reverse().join('')
+    },
+    autofill: function(e){
+      this.userInput = e.target.innerText
     }
   },
   watch: {
     userInput: function(){
-      console.log(this.userInput)
+      this.matchedName = [];
+      let count = this.userInput.length;
+      Names.forEach(el => {
+        if(count !== 0 && count !== el.length && el.slice(0,count) == this.userInput) {
+          this.matchedName.push(el);
+        }
+        console.log(el)
+      })
+      console.log(this.matchedName.length)
     }
   }
 });
