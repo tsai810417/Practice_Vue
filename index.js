@@ -35,12 +35,10 @@ var app = new Vue({
       this.matchedName = [];
       let count = this.userInput.length;
       Names.forEach(el => {
-        if(count !== 0 && count !== el.length && el.slice(0,count) == this.userInput) {
+        if(count !== 0 && count !== el.length && el.slice(0,count).toLowerCase() === this.userInput.toLowerCase()) {
           this.matchedName.push(el);
         }
-        console.log(el)
-      })
-      console.log(this.matchedName.length)
+      });
     }
   }
 });
