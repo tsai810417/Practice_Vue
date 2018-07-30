@@ -25,6 +25,11 @@ var app = new Vue({
     reverseMessage: function(){
       this.message = this.message.split('').reverse().join('')
     }
+  },
+  watch: {
+    userInput: function(){
+      console.log(this.userInput)
+    }
   }
 });
 
